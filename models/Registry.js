@@ -12,7 +12,13 @@ Registry.init(
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
+        validate:{
+          notEmpty: true
+        },
       },
+      registry_name: {
+        type: DataTypes.INTEGER
+      }
     },
     {
       sequelize,
