@@ -7,7 +7,6 @@ const Collection = require('./Collection');
 const Art_Type = require('./Art_Type');
 
 
-
 // Links Art_Lovers  and  Artists  through: Liked_Artist
 Art_Lover.hasMany(Liked_Artist);
 Artist.belongsToMany(Art_Lover, { through: Liked_Artist})
