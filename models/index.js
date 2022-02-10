@@ -5,7 +5,6 @@ const Registry = require('./Registry');
 const Art_Piece = require('./Art_Piece');
 
 
-
 // Links Art_Lovers  and  Artists  through: Liked_Artist
 Art_Lover.hasMany(Liked_Artist);
 Artist.belongsToMany(Art_Lover, { through: Liked_Artist})
