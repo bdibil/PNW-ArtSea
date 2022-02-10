@@ -1,13 +1,25 @@
-const User = require('./User');
-const Gallery = require('./Gallery');
-const Painting = require('./Painting');
+const Art_Lover = require('./Art_Lover');
+const Artist = require('./Artist');
+const Liked_Artist = require('./Liked_Artist');
+const Registry = require('./Registry');
+const Art_Piece = require('./Art_Piece');
 
-Gallery.hasMany(Painting, {
-  foreignKey: 'gallery_id',
-});
 
-Painting.belongsTo(Gallery, {
-  foreignKey: 'gallery_id',
-});
 
-module.exports = { User, Gallery, Painting };
+// Links Art_Lovers  and  Artists  through: Liked_Artist
+Art_Lover.hasMany(Liked_Artist);
+Artist.belongsToMany(Art_Lover, { through: Liked_Artist})
+
+
+// Links Art_Lovers  and  Liked  Art_Pieces  through: Registry
+Art_Lover.hasMany(Art_Piece)
+Art_Piece.belongsToMany(Art_Lover, { through: Registry})
+
+
+Artist.hasMany(Art_Piece)
+
+
+
+// console.log("test")
+
+module.exports = { Art_Lover, Artist, Liked_Artist, Registry, Art_Piece};

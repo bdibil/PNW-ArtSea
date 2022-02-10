@@ -1,6 +1,6 @@
 {
-  "name": "museum-paintings",
-  "version": "1.0.0",
+  "name": "PNW-ArtSea",
+  "version": "0.1.0",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -19,5 +19,15 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdibil/PNW-ArtSea.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/bdibil/PNW-ArtSea/issues"
+  },
+  "homepage": "https://github.com/bdibil/PNW-ArtSea#readme"
 }
