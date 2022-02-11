@@ -4,14 +4,39 @@
   </div>
   <div id="signup" role="tabpanel">
     <form id="signup-form" class="card-body">
+      {{msg}}
+            <div>
+        <label for="first_name-input-signup">First Name</label>
+        <input type="text" id="first_name-input-signup" />
+      </div>
+            <div>
+        <label for="last_name-input-signup">Last Name</label>
+        <input type="text" id="last_name-input-signup" />
+      </div>
       <div>
         <label for="username-input-signup">Username</label>
         <input type="text" id="username-input-signup" />
+      </div>
+            <div>
+        <label for="email-input-signup">Email</label>
+        <input type="text" id="email-input-signup" />
       </div>
       <div>
         <label for="password-input-signup">Password</label>
         <input type="password" id="password-input-signup" />
       </div>
+      <div class="dropdownMenus col-md-12">
+  <div class='form-field'>
+    <label for='is_artist'>Are you an artist or user?</label>
+    <select id='is_artist' class='form-control'>
+      <option>Artists</option>
+      <option>User</option>
+      {{#each shoes}}
+      <option value="{{this}}">{{this.brand}}</option>
+      {{/each}}
+    </select>
+  </div>
+</div>
       <button type="submit" id="signup-btn" class="btn" >Signup!</button>
       <a href="/login">Login instead</a>
     </form>
