@@ -5,19 +5,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museum</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
+{{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous"> --}}
 
 <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
+{{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous"> --}}
 
 <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
+{{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous"> --}}
 
 <!-- Compressed CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+{{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous"> --}}
 
 <!-- Compressed JavaScript -->
 {{!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script> --}}
@@ -46,6 +47,28 @@
       <h2>Enjoy the galleries!</h2>
     </aside> --}}
     <div class="gallery">
+      <div class="dropdownMenus col-md-12">
+  <div class='form-field'>
+    <label for='category'>Art Types</label>
+    <select id='category' class='form-control'>
+      <option>Choose Art Types</option>
+      {{#each shoes}}
+      <option value="{{this}}">{{this.brand}}</option>
+      {{/each}}
+    </select>
+  </div>
+</div>
+      <div class="dropdownMenus col-md-12">
+  <div class='form-field'>
+    <label for='artists'>Artists</label>
+    <select id='artists' class='form-control'>
+      <option>Choose Artists</option>
+      {{#each shoes}}
+      <option value="{{this}}">{{this.brand}}</option>
+      {{/each}}
+    </select>
+  </div>
+</div>
       {{{body}}}
     </div>
   </main>
