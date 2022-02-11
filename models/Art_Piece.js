@@ -13,11 +13,13 @@ Art_Piece.init(
         primaryKey: true,
         autoIncrement: true,
       },
+      //can we change title to category?
       title: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      artist_name: {
+      //artist_name changed to company_name
+      company_name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
