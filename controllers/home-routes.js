@@ -17,6 +17,8 @@ router.get('/', async (req, res) => {
       gallery.get({ plain: true })
     );
 
+    console.log(galleries);
+
     res.render('homepage', {
       galleries,
     });
