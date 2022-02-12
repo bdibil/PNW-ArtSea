@@ -46,8 +46,8 @@ router.post('/', async (req, res) => {
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: 'apikey', // generated ethereal user
-        pass: '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', // generated ethereal password
+        user: '', // generated ethereal user
+        pass: '', // generated ethereal password
       },
       tls: {
         rejectUnauthorized: false
