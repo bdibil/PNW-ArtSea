@@ -1,4 +1,28 @@
 <!-- For each gallery, the 'gallery-details' partial is used to render the gallery data -->
-{{#each galleries as |gallery|}}
-{{> gallery-details}}
-{{/each}}
+{{!-- {{#each galleries as |gallery|}} --}}
+{{!-- {{> gallery-details}} --}}
+{{!-- {{/each}} --}}
+
+ <div class="gallery">
+      <div class="dropdownMenus col-md-12">
+  <div class='form-field'>
+    <label for='category'>Art Types</label>
+    <select id='category' class='form-control'>
+      <option>Choose Art Types</option>
+      {{#each shoes}}
+      <option value="{{this}}">{{this.brand}}</option>
+      {{/each}}
+    </select>
+  </div>
+</div>
+      <div class="dropdownMenus col-md-12">
+  <div class='form-field'>
+    <label for='artists'>Artists</label>
+    <select id='artists' class='form-control'>
+      <option>Choose Artists</option>
+      {{#each shoes}}
+      <option value="{{this}}">{{this.brand}}</option>
+      {{/each}}
+    </select>
+  </div>
+</div>

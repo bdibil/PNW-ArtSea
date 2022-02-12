@@ -32,43 +32,19 @@
     <h1>Welcome ArtSea</h1>
   </header>
   <nav>
-   
-      <a href="/">ArtSea</a>
-      {{!-- <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li> --}}
+    <a href="/">ArtSea</a>
+    {{!-- <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li> --}}
     <a href="/login">Login</a>
     <a href="/">Registry</a>
-      <a href="/">About Us</a>
-      <a href="#" id="logout-link">Logout</a>
-  
+    <a href="/">About Us</a>
+    <a href="#" id="logout-link">Logout</a>
   </nav>
   <main>
     {{!-- just removed this HL --}}
     {{!-- <aside>
       <h2>Enjoy the galleries!</h2>
     </aside> --}}
-    <div class="gallery">
-      <div class="dropdownMenus col-md-12">
-  <div class='form-field'>
-    <label for='category'>Art Types</label>
-    <select id='category' class='form-control'>
-      <option>Choose Art Types</option>
-      {{#each shoes}}
-      <option value="{{this}}">{{this.brand}}</option>
-      {{/each}}
-    </select>
-  </div>
-</div>
-      <div class="dropdownMenus col-md-12">
-  <div class='form-field'>
-    <label for='artists'>Artists</label>
-    <select id='artists' class='form-control'>
-      <option>Choose Artists</option>
-      {{#each shoes}}
-      <option value="{{this}}">{{this.brand}}</option>
-      {{/each}}
-    </select>
-  </div>
-</div>
+   
       {{{body}}}
     </div>
   </main>
