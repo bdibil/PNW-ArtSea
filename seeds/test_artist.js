@@ -7,10 +7,7 @@ const test_data = [
     username: 'ZoeM',
     email: 'antoinette.illustrations@gmail.com',
     password: 'artsea123',
-    website: 'http://www.blah.com',
-    bio:'whats up?',
-    link_01: 'http://www.image.com',
-    link_02: 'http://www.image.com'
+
   },
   {
     first_name: 'Zoe A ',
