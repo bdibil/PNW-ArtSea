@@ -28,7 +28,7 @@
 
 <body>
   <header>
-    <h1>Welcome ArtSea</h1>
+    <h1>Welcome to ArtSea</h1>
   </header>
   <nav>
    
@@ -43,13 +43,49 @@
   <main>
     {{!-- just removed this HL --}}
     {{!-- <aside>
-      <h2>Enjoy the galleries!</h2>
+      <h2>Let's get our Art on!</h2>
     </aside> --}}
     <div class="gallery">
       {{{body}}}
     </div>
   </main>
-  <footer class="flex-row justify-center">
+  {{!-- added about us section-cs --}}
+  <section class="about-us">
+    <div class="container-fluid">
+      <div style="margin-left: auto; margin-right: auto">
+          <div class="row">
+             <div class="center-align">
+                <h1 id="work">Meet the Team!</h1>
+             </div>
+          </div>
+          <div class="row">
+             <div class="card">
+                <div class="col md-3 ">
+                    <img src="../../public/images/project2-bernardo.jpg" alt="floating man">
+                    <a href="https://github.com/bdibil" class="github">Visit my Git hub</a>
+                    <p>I am Bernardo. I am the github Manager, and all around artLover. I joined the team because I love the unique atmosphere!</p>
+                  </div>
+             <div class= "col-md-3" >
+                    <img src="../../public/images/project2-heather.jpg" alt="spirit-art">
+                    <a href="https://github.com/hloop132" class="GitHub">Check out my GitHub</a>
+                    <p>I'm Happy Heather! Smiles are my game! I am an artist and art-coordinator. Recently, my goats had Kids and now I am the proud other Momma of 7 new goats!</p>
+              </div>
+               <div class="col md-3 ">
+                    <img src="../../public/images/project2-Perul.jpg" alt="beautiful peacock">
+                    <a href="https://github.com/sinka27" class="github">My Developer account</a> Git hub</a>
+                    <p>I am so excited to be apart of the team. I have enjoyed looking at all the art and can't wait to see more</p>
+                  </div>
+                  <div class="col md-3 ">
+                    <img src="../../public/images/project2-chrissie.jpg" alt="steamPunk">
+                    <a href="https://github.com/sinka27" class="github">My Developer account</a> Git hub</a>
+                    <p>whaaaaatttttzzzz upppppp!</p>
+                  </div>
+                </div>
+            </div>
+      </div>
+    </div>      
+    </section>
+    <footer class="flex-row justify-center">
     &copy; ArtSea Folks
   </footer>
 

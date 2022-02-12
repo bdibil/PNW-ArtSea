@@ -66,6 +66,10 @@ Artist.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 8);
         return newUserData;
       },
+      beforeUpdate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password,8);
+        return newUserData;
+      },
     },
     sequelize,
     timestamps: false,

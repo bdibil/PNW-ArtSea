@@ -1,7 +1,8 @@
-const { Art_Lover } = require('../models');
+const { User } = require('../models');
 
 const test_data = [
     {
+        id:1,  
         first_name: 'Art',
         last_name: 'Lover',
         username: 'AL1',
@@ -9,6 +10,7 @@ const test_data = [
         password: 'pass321',
     },
     {
+      id:2, 
       first_name: 'Joe',
       last_name: 'Joe',
       username: 'joejoe',
@@ -19,6 +21,6 @@ const test_data = [
   ];
   
 
-const seedArtLover = () => Art_Lover.bulkCreate(test_data);
+const seedUsers = () => User.bulkCreate(test_data);
 
-module.exports = seedArtLover;
+module.exports = seedUsers;
