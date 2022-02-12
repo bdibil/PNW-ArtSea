@@ -7,6 +7,7 @@ const test_data = [
     username: 'ZoeM',
     email: 'antoinette.illustrations@gmail.com',
     password: 'artsea123',
+    website: 'google.com'
   },
   {
     first_name: 'Kelly',
