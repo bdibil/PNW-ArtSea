@@ -7,53 +7,40 @@ class Art_Piece extends Model {}
 
 Art_Piece.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        piece_name:{
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
-        image:{
-          type: DataTypes.STRING,
-          allowNull: true,
-        },
-          price: {
-            type: DataTypes.DECIMAL(10,2),
-            allowNull: false,
-            validate: { isDecimal: true },
-          },
-          stock: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 10,
-            validate: {isNumeric: true},
-          },
-          category_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'category',
-              key: 'id'
+      id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+     
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       
-            },
-        },
-        artist_id:{
-          type: DataTypes.INTEGER,
-          references: {
-            model: 'artist',
-          },
-        }
+      artist_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      file_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      cloud_url: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     },
     {
       sequelize,
-      timestamps: false,
+      timestamps: true,
       freezeTableName: true,
       underscored: true,
-      modelName: 'art-piece',
+      modelName: 'art_piece',
     }
   );
-  
+
+
+
 module.exports = Art_Piece;

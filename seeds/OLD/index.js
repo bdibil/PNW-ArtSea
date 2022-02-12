@@ -1,13 +1,13 @@
 const sequelize = require('../config/connection');
-const SeedArtType = require('./SeedArtType');
-const SeedArtPiece = require('./SeedArtPiece');
+const seedGallery = require('./galleryData');
+const seedPaintings = require('./paintingData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await SeedArtType();
+  await seedGallery();
 
-  await SeedArtPiece();
+  await seedPaintings();
 
   process.exit(0);
 };
