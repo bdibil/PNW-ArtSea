@@ -1,4 +1,4 @@
-const { Gallery } = require('../models');
+const { Gallery } = require('../../models');
 
 const gallerydata = [
   {
