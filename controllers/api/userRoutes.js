@@ -1,3 +1,4 @@
+require('dotenv').config();
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
 const { User } = require('../../models');
@@ -55,7 +56,7 @@ router.post('/', async (req, res) => {
 
     let mailOptions = {
       from: 'ArtSea" <artsea2022@gmail.com>', // sender address
-      to: "sinka27392@gmail.com", // list of receivers
+      to: `${req.body.email}`, // list of receivers
       subject: "Welcome to ArtSea", // Subject line
       text: "Hello world?", // plain text body
       html: `Dear <b>${req.body.username}</b>,
