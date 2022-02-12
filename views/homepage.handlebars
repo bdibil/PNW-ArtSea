@@ -1,4 +1,26 @@
 <!-- For each gallery, the 'gallery-details' partial is used to render the gallery data -->
-{{#each galleries as |gallery|}}
-{{> gallery-details}}
+{{#each artTypes as |artType|}}
+{{> artTypeCategory}}
 {{/each}}
+
+<section class="card">
+  <a href="/artPiece/{{id}}">
+    <header>{{title}}</header>
+
+    <div class="card-body">
+      <img src="/images/{{filename}}" alt="{{description}}">
+      <p>By: {{artist}}</p>
+    </div>
+  </a>
+</section>
+
+{{!-- <section class="card">
+  <a href="/painting/{{id}}">
+    <header>{{title}}</header>
+
+    <div class="card-body">
+      <img src="/images/{{filename}}" alt="{{description}}">
+      <p>By: {{artist}}</p>
+    </div>
+  </a>
+</section> --}}

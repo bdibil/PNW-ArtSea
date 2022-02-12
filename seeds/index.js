@@ -1,4 +1,5 @@
 const sequelize = require('../config/connection');
+const seedCategory = require('./artType');
 
 // Import seed files as needed 
 const seedArtist = require('./test_artist');
@@ -10,6 +11,7 @@ const seedArt = require('./test_art_piece');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
+  await seedCategory();
 //  Seed Artist Info  with  ->  test_artist.js  data
   await seedArtist();
 

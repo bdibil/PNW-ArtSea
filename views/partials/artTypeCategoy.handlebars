@@ -1,0 +1,17 @@
+<section class="card">
+  <!-- The contents of this card links to the gallery page using the gallery ID -->
+  <a href="/artType/{{id}}">
+    <!-- The card contains the gallery name as the card header -->
+    <header>{{name}}</header>
+    <!-- The card contains the first painting of the gallery -->
+    <img src="/images/{{artPieces.[0].filename}}" alt="{{artPieces.[0].description}}">
+  </a>
+</section>
+
+
+{{!-- <section class="card">
+  <a href="/gallery/{{id}}">
+    <header>{{name}}</header>
+    <img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}">
+  </a>
+</section> --}}
