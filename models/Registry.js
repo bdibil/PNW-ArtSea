@@ -18,7 +18,14 @@ Registry.init(
       },
       registry_name: {
         type: DataTypes.INTEGER
-      }
+      },
+      user_id: {
+        type: DataTypes.INTEGER,
+        references:{
+        model: 'user',
+        key: 'id'
+      },
+    },
     },
     {
       sequelize,
