@@ -13,7 +13,21 @@ Liked_Artist.init(
         primaryKey: true,
         autoIncrement: true,
       },
-    },
+      user_id: {
+        type: DataTypes.INTEGER,
+        references:{
+          model: 'user',
+          key: 'id'
+        }
+      },
+      artist_id: {
+        type: DataTypes.INTEGER,
+        references:{
+          model: 'artist',
+          key: 'id'
+        }
+      },
+      },
     {
       sequelize,
       timestamps: true,
