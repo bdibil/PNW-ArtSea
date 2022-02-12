@@ -11,11 +11,15 @@ const loginFormHandler = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
+    var res = await response.json();
+
+    console.log("response = "+JSON.stringify(res));
+
     if (response.ok) {
-      document.location.replace('/');
+      // document.location.replace('/');
       alert('Login Successful');
     } else {
-      alert('Failed to log in');
+      alert(res.message);
     }
   }
 };

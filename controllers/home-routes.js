@@ -1,32 +1,32 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models/OLD');
+const { Art_Piece, User, Art_Type,Artist,Collection} = require('../models');
 
 // GET all galleries for homepage
-router.get('/', async (req, res) => {
-  try {
-    const dbGalleryData = await Gallery.findAll({
-      include: [
-        {
-          model: Painting,
-          attributes: ['filename', 'description'],
-        },
-      ],
-    });
+// router.get('/', async (req, res) => {
+//   try {
+//     const dbGalleryData = await Gallery.findAll({
+//       include: [
+//         {
+//           model: Painting,
+//           attributes: ['filename', 'description'],
+//         },
+//       ],
+//     });
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
-    );
+//     const galleries = dbGalleryData.map((gallery) =>
+//       gallery.get({ plain: true })
+//     );
 
-    console.log(galleries);
+//     console.log(galleries);
 
-    res.render('homepage', {
-      galleries,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     res.render('homepage', {
+//       galleries,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 // // GET one gallery
 // router.get('/gallery/:id', async (req, res) => {

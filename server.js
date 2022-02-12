@@ -13,23 +13,8 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
-
-
-//  cloudinary test
-
-const cloudinary = require('./config/cloudinary')
-
-// cloudinary.uploader.upload('public/images/BreeRose.jpg', function(error, result) { console.log(result) });
-
-//  cloudinary test
-
-
-
-
-// moved secret to .env file
-const SECRET = process.env.SESS_SECRET 
 const sess = {
-  secret: SECRET,
+  secret: 'Super secret secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,

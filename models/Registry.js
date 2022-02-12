@@ -12,20 +12,7 @@ Registry.init(
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-        validate:{
-          notEmpty: true
-        },
       },
-      registry_name: {
-        type: DataTypes.INTEGER
-      },
-      user_id: {
-        type: DataTypes.INTEGER,
-        references:{
-        model: 'user',
-        key: 'id'
-      },
-    },
     },
     {
       sequelize,

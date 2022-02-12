@@ -5,19 +5,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museum</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
+{{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous"> --}}
 
 <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
+{{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous"> --}}
 
 <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
+{{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous"> --}}
 
 <!-- Compressed CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+{{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous"> --}}
 
 <!-- Compressed JavaScript -->
 {{!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script> --}}
@@ -28,64 +29,26 @@
 
 <body>
   <header>
-    <h1>Welcome to ArtSea</h1>
+    <h1>Welcome ArtSea</h1>
   </header>
   <nav>
-   
-      <a href="/">ArtSea</a>
-      {{!-- <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li> --}}
+    <a href="/">ArtSea</a>
+    {{!-- <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li> --}}
     <a href="/login">Login</a>
     <a href="/">Registry</a>
-      <a href="/">About Us</a>
-      <a href="#" id="logout-link">Logout</a>
-  
+    <a href="/">About Us</a>
+    <a href="#" id="logout-link">Logout</a>
   </nav>
   <main>
     {{!-- just removed this HL --}}
     {{!-- <aside>
-      <h2>Let's get our Art on!</h2>
+      <h2>Enjoy the galleries!</h2>
     </aside> --}}
-    <div class="gallery">
+   
       {{{body}}}
     </div>
   </main>
-  {{!-- added about us section-cs --}}
-  <section class="about-us">
-    <div class="container-fluid">
-      <div style="margin-left: auto; margin-right: auto">
-          <div class="row">
-             <div class="center-align">
-                <h1 id="work">Meet the Team!</h1>
-             </div>
-          </div>
-          <div class="row">
-             <div class="card">
-                <div class="col md-3 ">
-                    <img src="../../public/images/project2-bernardo.jpg" alt="floating man">
-                    <a href="https://github.com/bdibil" class="github">Visit my Git hub</a>
-                    <p>I am Bernardo. I am the github Manager, and all around artLover. I joined the team because I love the unique atmosphere!</p>
-                  </div>
-             <div class= "col-md-3" >
-                    <img src="../../public/images/project2-heather.jpg" alt="spirit-art">
-                    <a href="https://github.com/hloop132" class="GitHub">Check out my GitHub</a>
-                    <p>I'm Happy Heather! Smiles are my game! I am an artist and art-coordinator. Recently, my goats had Kids and now I am the proud other Momma of 7 new goats!</p>
-              </div>
-               <div class="col md-3 ">
-                    <img src="../../public/images/project2-Perul.jpg" alt="beautiful peacock">
-                    <a href="https://github.com/sinka27" class="github">My Developer account</a> Git hub</a>
-                    <p>I am so excited to be apart of the team. I have enjoyed looking at all the art and can't wait to see more</p>
-                  </div>
-                  <div class="col md-3 ">
-                    <img src="../../public/images/project2-chrissie.jpg" alt="steamPunk">
-                    <a href="https://github.com/sinka27" class="github">My Developer account</a> Git hub</a>
-                    <p>whaaaaatttttzzzz upppppp!</p>
-                  </div>
-                </div>
-            </div>
-      </div>
-    </div>      
-    </section>
-    <footer class="flex-row justify-center">
+  <footer class="flex-row justify-center">
     &copy; ArtSea Folks
   </footer>
 
