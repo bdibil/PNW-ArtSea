@@ -1,4 +1,23 @@
 <!-- For each gallery, the 'gallery-details' partial is used to render the gallery data -->
+<<<<<<< HEAD
+{{#each artTypes as |artType|}}
+{{> artTypeCategory}}
+{{/each}}
+
+<section class="card">
+  <a href="/artPiece/{{id}}">
+    <header>{{title}}</header>
+
+    <div class="card-body">
+      <img src="/images/{{filename}}" alt="{{description}}">
+      <p>By: {{artist}}</p>
+    </div>
+  </a>
+</section>
+
+{{!-- 
+ --}}
+=======
 {{!-- {{#each galleries as |gallery|}} --}}
 {{!-- {{> gallery-details}} --}}
 {{!-- {{/each}} --}}
@@ -26,3 +45,4 @@
     </select>
   </div>
 </div>
+>>>>>>> dev
