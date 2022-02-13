@@ -7,14 +7,18 @@ const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const cloudinary = require('./config/cloudinary')
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
+// moved secret to .env file
+const SECRET = process.env.SESS_SECRET 
 const sess = {
-  secret: 'Super secret secret',
+  secret: SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
