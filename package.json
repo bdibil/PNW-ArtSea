@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
     "bcrypt": "^5.0.0",
     "cloudinary": "^1.28.1",
     "connect-session-sequelize": "^7.0.4",

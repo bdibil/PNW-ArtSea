@@ -1,48 +1,29 @@
-<!-- For each gallery, the 'gallery-details' partial is used to render the gallery data -->
-<<<<<<< HEAD
-{{#each artTypes as |artType|}}
-{{> artTypeCategory}}
-{{/each}}
+{{> latest }}
+{{> mostLiked }}
+<div class="gallery" style="width: 100%;">
+     <div class="dropdownMenus col-md-12" style="width: max-content">
+         <div class='form-field'>
+             <label for='category'>Art Types</label>
+             <select id='category' class='form-control'>
+                 <option>Choose Art Types</option>
+                 {{#each artTypes}}
+                     <option value="{{this}}">{{this}}</option>
+                 {{/each}}
+             </select>
+         </div>
+     </div>
 
-<section class="card">
-  <a href="/artPiece/{{id}}">
-    <header>{{title}}</header>
+     <div class="dropdownMenus col-md-12" style="width: max-content">
+         <div class='form-field'>
+             <label for='artists'>Artists</label>
+             <select id='artists' class='form-control'>
+                 <option>Choose Artists</option>
+                 {{#each artistNames}}
+                     <option value="{{this}}">{{this}}</option>
+                 {{/each}}
+             </select>
+         </div>
+     </div>
+ </div>
 
-    <div class="card-body">
-      <img src="/images/{{filename}}" alt="{{description}}">
-      <p>By: {{artist}}</p>
-    </div>
-  </a>
-</section>
-
-{{!-- 
- --}}
-=======
-{{!-- {{#each galleries as |gallery|}} --}}
-{{!-- {{> gallery-details}} --}}
-{{!-- {{/each}} --}}
-
- <div class="gallery">
-      <div class="dropdownMenus col-md-12">
-  <div class='form-field'>
-    <label for='category'>Art Types</label>
-    <select id='category' class='form-control'>
-      <option>Choose Art Types</option>
-      {{#each shoes}}
-      <option value="{{this}}">{{this.brand}}</option>
-      {{/each}}
-    </select>
-  </div>
-</div>
-      <div class="dropdownMenus col-md-12">
-  <div class='form-field'>
-    <label for='artists'>Artists</label>
-    <select id='artists' class='form-control'>
-      <option>Choose Artists</option>
-      {{#each shoes}}
-      <option value="{{this}}">{{this.brand}}</option>
-      {{/each}}
-    </select>
-  </div>
-</div>
->>>>>>> dev
+{{> artCards}}

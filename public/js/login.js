@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
     console.log("response = "+JSON.stringify(res));
 
     if (response.ok) {
-      // document.location.replace('/');
+      document.location.replace('/');
       alert('Login Successful');
     } else {
       alert(res.message);
