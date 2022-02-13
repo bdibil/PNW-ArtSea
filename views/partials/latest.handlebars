@@ -1,0 +1,16 @@
+{{#if latest}}
+    <div class="card-group">
+        {{#each latest}}
+            <div class="card">
+                <img class="card-img-top" src="{{this.cloud_url}}" alt="">
+                <div class="card-body">
+                  {{!-- <h5 class="card-title">{{this.title}}</h5> --}}
+                  <p class="card-text">{{this.artist_name}}</p>
+                  {{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+    <p><em>There are currently no arts.</em></p>
+{{/if}}

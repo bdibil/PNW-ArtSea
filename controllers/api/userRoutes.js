@@ -3,6 +3,7 @@ const router = require('express').Router();
 const nodemailer = require('nodemailer');
 const { User } = require('../../models');
 //const { Art_Lover } = require('../../models/Art_Lover');
+let userType = '';
 
 const randString = () => {
   const len = 8;
@@ -11,6 +12,7 @@ const randString = () => {
     const ch = Math.floor((Math.random() * 10) + 1)
     randStr += ch
   }
+
   return randStr
 }
 
@@ -45,8 +47,8 @@ router.post('/', async (req, res) => {
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.nodeMailerAPI, // generated ethereal user
-        pass: process.env.nodeMailerPass, // generated ethereal password
+        user: '', // generated ethereal user will add new one
+        pass: '', // generated ethereal password will add new one
       },
       tls: {
         rejectUnauthorized: false
@@ -91,7 +93,6 @@ router.get('/verify/:uniqueString', async (req, res) => {
     res.json('User not found');
   }
 });
-
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { username: req.body.username } });
@@ -120,17 +121,14 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Please verify your email' });
       return;
     }
-    else{
+    else {
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.loggedIn = true;
-        
+        req.session.userType = userData.is_artist;
         res.json({ user: userData, message: 'You are now logged in!' });
       });
     }
-
-    
-
   } catch (err) {
     res.status(400).json({message: 'No user account found!'});
   }
@@ -144,6 +142,18 @@ router.post('/logout', (req, res) => {
   } else {
     console.log(req.session);
     res.status(404).end();
+  }
+});
+
+router.post('/getUserInfo', async (req, res) => {
+  if (req.session.loggedIn) {
+    res
+        .status(200)
+        .json({ user: req.session.userType, userId: req.session.user_id });
+  } else {
+    res
+        .status(200)
+        .json({ user: "LoggedOut"})
   }
 });
 
