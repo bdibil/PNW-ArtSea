@@ -1,6 +1,4 @@
 # ArtSea
-
-
 The purpose of this app is to create an online environment for "ArtLovers" to connect "TO LOCAl ARTIST". You can go online and view art anywhere. But here at ArtSea we want to bring our community together. Keep that $ local so that both ArtLover and Artist can continously enjoy the Benefit! 
 
 ## Acceptance Criteria

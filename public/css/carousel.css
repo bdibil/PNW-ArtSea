@@ -1,0 +1,78 @@
+#slider {
+  width: 50%;
+}
+
+#slider li {
+  width: 33%;
+}
+/* .d-block {
+  width: 60vw;
+  height: 60vh;
+} */
+/*** Overall MovingBoxes Slider ***/
+.mb-wrapper {
+  margin: 0 auto 20px;
+  position: relative;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  /*box-shadow: inset 0 0 10px #888;*/
+}
+
+/* Panel Wrapper */
+.mb-slider, .mb-scroll {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  /***(>'-')> Control Panel Font size here <('-'<)***/
+  font-size: 18px;
+}
+
+/* active slider border highlight */
+.mb-active-slider {
+  border-color: #333;
+}
+
+/*** Slider panel ***/
+.mb-slider .mb-panel {
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+body {
+  display:grid;
+  place-items:center;
+}
+img {
+  width: 30%;
+  height: 100%;
+  object-fit:cover;
+
+  -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
+
+  transform-origin:center;
+  transform:perspective(800px) rotateY(25deg);
+  transition:0.5s;
+}
+.carousel-container {
+  max-width:600px;
+  max-height:350px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+
+}
+.carousel-container:hover img {
+  opacity:0.3;
+}
+.carousel-container img:hover {
+  transform:perspective(800px)       rotateY(0deg);
+  opacity:1;
+}

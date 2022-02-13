@@ -13,12 +13,10 @@ Art_Piece.init(
         primaryKey: true,
         autoIncrement: true,
       },
-     
       title: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      
       artist_name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -31,6 +29,22 @@ Art_Piece.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
+      upload_timestamp: {
+          type: DataTypes.BIGINT,
+          allowNull: false,
+      },
+      like_count: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+      },
+      collection_id: {
+          type: DataTypes.INTEGER,
+          allowNull: true,
+      },
+      art_type_id: {
+          type: DataTypes.INTEGER,
+          allowNull: true ,
+      }
     },
     {
       sequelize,
