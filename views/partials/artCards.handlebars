@@ -9,6 +9,10 @@
                 </small><br>
                 <button type="button" value="{{this.id}}" class="addToRegistry btn btn-primary btn-sm" onclick="addToRegistry(this)">Add to Registry</button>
             </footer>
+                <small class="text-muted" id="num-likes-{{this.id}}">{{this.like_count}} likes</small>
+                {{#if state}}
+                    <button type="button" value="{{this.id}}" class="addToRegistry btn btn-primary btn-sm" {{this.state}} onclick="addToRegistry(this)">Add to Registry</button>
+                {{/if}}
         </blockquote>
     </div>
     {{/each}}
