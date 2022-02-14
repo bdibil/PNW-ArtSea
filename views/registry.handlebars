@@ -1,0 +1,22 @@
+<button type="button" class="btn btn-primary" style="max-height: 50px" onclick="copyToClipboard()">
+    Share Registry <span class="badge badge-light" id="share-link">{{this.shareUrl}}</span>
+</button>
+<div class="card-columns" style="width: max-content; margin-left: 20%; margin-right: 20%">
+    {{#each registryArt}}
+        <div class="card p-3 text-right">
+            <img src={{this.cloud_url}} class="art-img" id="image-{{this.id}}" onclick="zoomImage({{this.id}})">
+            <div id="myModal-{{this.id}}" class="zoom-modal">
+                <img class="modal-content" id="modal-image-{{this.id}}">
+                <div id="modal-caption-{{this.id}}"></div>
+            </div>
+            <blockquote class="blockquote mb-0">
+                <p></p>
+                <footer class="blockquote-footer">
+                    <small class="text-muted" id="image-title-{{this.id}}">{{this.title}} <cite title="Source Title"> by {{this.artist_name}}</cite>
+                    </small><br>
+                    <button type="button" value="{{this.id}}" class="addToRegistry btn btn-primary btn-sm" onclick="addToRegistry(this)">Add to Registry</button>
+                </footer>
+            </blockquote>
+        </div>
+    {{/each}}
+</div>
