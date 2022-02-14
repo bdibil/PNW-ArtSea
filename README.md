@@ -6,25 +6,60 @@
 
 
 ## Table of Contents 
+- [Installation](#installation)
 - [Usage](#usage)
+- [Technologies](#technologies)
 - [License](#license)  ![GitHub](https://img.shields.io/github/license/bdibil/PNW-ArtSea)
 - [Contributing](#contributing)
+- [Credits](#credits)
+
+
+## Installation
+You can clone this repo and run:
+
+`npm init`
+
+`npm i` (to install all our dependencies)
+
+Run the following command at the root of the cloned project and answer the prompted questions:
+
+`mysql -u root -p`
+
+Enter PW when promted
+
+`source db/schema.sql`
+
+`npm run seed`
+  
+`npm start`
 
 
 ## Usage    
+
 The application is deployed on the link below:
 
-  
+
 [ArtSea - Art Scene of the Puget Sound](http://artsea-2022.herokuapp.com/)
 
 You can register as an Artist and upload your work to our site, or as a User and browse all the art, like your favorite art pieces and add them to your registry. 
 
-Check out some of our site's photos: 
+Check out a screenshot of our site: 
 
-![](https://res.cloudinary.com/artsea/image/upload/v1644875356/AS_01_ksz1hh.png)
+![](https://res.cloudinary.com/artsea/image/upload/v1644876776/ArtSea_Full_b5a9as.png)
 
-![](https://res.cloudinary.com/artsea/image/upload/v1644875356/AS_02_kawlch.png)
 
+## Technologies 
+### (and select Node.js packages Used)
+
+- JavaScript
+- CSS
+- MySQL
+- express
+- handlebars
+- sequelize
+- nodemailer
+- cloudinary
+- bcrypt
 
 
 ## License  
@@ -52,5 +87,12 @@ SOFTWARE.
 
 
 ## Contributing  
-If you want to contribute to our project, you can find more information on our site [ArtSea](http://artsea-2022.herokuapp.com/) in the About Us section, or reach out to us via email [artseafeb2022@gmail.com](mailto:artseafeb2022@gmail.com)
+If you want to contribute to our project, you can find more information on our site in the About Us section, or reach out to us via email [artseafeb2022@gmail.com](mailto:artseafeb2022@gmail.com)
 
+
+## Credits
+
+[Parul Raj](https://github.com/sinka27) - 
+[Chrissie Sparling](https://github.com/ChrissieSparling) - 
+[Heather Loop](https://github.com/hloop132) - 
+[Bernardo Dibildox](https://github.com/bdibil)
