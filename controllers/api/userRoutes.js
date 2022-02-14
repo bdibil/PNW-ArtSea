@@ -47,8 +47,8 @@ router.post('/', async (req, res) => {
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: '', // generated ethereal user will add new one
-        pass: '', // generated ethereal password will add new one
+        user: process.env.user, // generated sendgrid user
+        pass: process.env.pass, // generated sendgrid password
       },
       tls: {
         rejectUnauthorized: false
@@ -56,7 +56,7 @@ router.post('/', async (req, res) => {
     });
 
     let mailOptions = {
-      from: 'ArtSea" <artsea2022@gmail.com>', // sender address
+      from: 'ArtSea <artseafeb2022@gmail.com>', // sender address
       to: `${req.body.email}`, // list of receivers
       subject: "Welcome to ArtSea", // Subject line
       text: "Hello world?", // plain text body
@@ -126,6 +126,7 @@ router.post('/login', async (req, res) => {
         req.session.user_id = userData.id;
         req.session.loggedIn = true;
         req.session.userType = userData.is_artist;
+        req.session.name = userData.first_name+" "+userData.last_name
         res.json({ user: userData, message: 'You are now logged in!' });
       });
     }
