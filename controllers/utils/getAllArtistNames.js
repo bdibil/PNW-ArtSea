@@ -1,11 +1,24 @@
 const { QueryTypes } = require('sequelize');
+const {User} = require("../../models");
 
 async function getArtistNames () {
-    const sql = await sequelize.query("SELECT first_name, last_name FROM `user`", { type: QueryTypes.SELECT });
     let artistNames = [];
-    sql.forEach(artist => {
-        artistNames.push(artist.first_name + " " + artist.last_name);
-    });
+    try {
+        await User.findAll({
+            where: {
+                is_artist: "Artist"
+            }
+        }).then(function(entries){
+            entries.forEach(artist => {
+                artistNames.push({
+                    "name" : artist.first_name + " " + artist.last_name,
+                    "id" : artist.id
+                });
+            });
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
     return artistNames;
 }
 

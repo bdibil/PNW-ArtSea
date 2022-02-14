@@ -13,11 +13,8 @@ const getLatest = async () => {
         });
 
         return arts;
-        // console.log(arts);
-        // res.send(arts[0]);
-        // res.render('login', { art : arts[0] });
     } catch (err) {
-        res.status(500).json(err);
+        return err;
     }
 };
 
@@ -33,13 +30,33 @@ const getMostLiked = async () => {
 
         console.log(arts);
         return arts;
-        // console.log(arts);
-        // res.send(arts[0]);
-        // res.render('login', { art : arts[0] });
     } catch (err) {
-        res.status(500).json(err);
+        return err;
     }
 };
 
+router.post('/create', async (req, res) => {
+    let url = req.body.url.split('/');
+    try {
+        const newArtPiece = await Art_Piece.create({
+            title: req.body.title,
+            artist_name: req.session.name,
+            file_name: url[url.length-1],
+            cloud_url: req.body.url,
+            upload_timestamp: req.body.uploadTimestamp,
+            like_count: 0,
+            art_type_id: req.body.artType,
+            user_id: req.session.user_id
+        });
+        res
+            .status(200)
+            .json({"message": "Art upload Successfully"});
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 module.exports.getLatest = getLatest;
 module.exports.getMostLiked = getMostLiked;
+module.exports.router = router;
