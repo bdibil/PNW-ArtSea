@@ -169,3 +169,13 @@ img {
   margin: 10px;
   /* border: 2px solid yellow; */
 } 
+
+#statusBar {
+  position: absolute;
+  width: 100%;
+  line-height: 10px;
+  z-index: 9;
+}
+#statusBar a {
+  line-height: 10px;
+}
