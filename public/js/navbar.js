@@ -19,22 +19,23 @@ const getNavBarElements = async () => {
     });
 
     let res = await response.json();
-    let returnHtml = `<a href="/">ArtSea</a><a href="/">Registry</a><a href="/">About Us</a>`;
+    let returnHtml = `<a href="/">ArtSea</a><a href="/about-us">About Us</a><a href="/my-registry" id="my-registry">My Registry</a>`;
 
     if (response.ok) {
         // alert("response = "+JSON.stringify(res));
         if(res.user == "User") {
             returnHtml += `<a href="#" id="logout-link">Logout</a>`
         } else if(res.user == "Artist") {
-            returnHtml += `<a href="#">My Art</a>`
+            returnHtml += `<a href="/my-art">My Art</a>`
             returnHtml += `<a href="/upload-art">Upload Art</a>`
             returnHtml += `<a href="#" id="logout-link">Logout</a>`
         } else if(res.user == "LoggedOut") {
             returnHtml += `<a href="/login">Login</a>`
+        } else {
+            alert(res.user);
         }
-        // document.location.replace('/');
     } else {
-        alert("Failed to log out");
+        alert("Unable to get user type");
     }
 
     const navBar = document.getElementsByTagName('nav')[0];

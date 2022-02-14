@@ -3,77 +3,113 @@ const { Art_Piece } = require('../models');
 const test_data = [
   {
     //can we change title to category?
-    title: '',
+    title: 'testTitle',
     //artist_name changed to company_name
     artist_name: 'Antoinette Illustrations',
-    file_name: '01-ZoeMcTamaney.jpg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'ZoeMcTamaney.jpg',
+    cloud_url: '/images/ZoeMcTamaney.jpg',
+    upload_timestamp: 1,
+    like_count: 5,
+    liked_by: null
   },
   {
     title: 'Illustration',
     artist_name: 'Art of Kelly Dean Verity',
-    file_name: '02-KellyDeanVerity.jpg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'KellyDeanVerity.jpg',
+    cloud_url: '/images/KellyDeanVerity.jpg',
+    upload_timestamp: 2,
+    like_count: 4,
+    liked_by: null
   },
   {
     title: 'Apothecary',
     artist_name: 'Co-op of Creation',
-    file_name: '03-CoOpCreations.jpeg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'CoOpCreations.jpeg',
+    cloud_url: '/images/CoOpCreations.jpeg',
+    upload_timestamp: 3,
+    like_count: 8,
+    liked_by: null
   },
   {
     title: 'Fiber Arts',
     artist_name: 'Danny  Mansmith',
-    file_name: '04-DannyMansmith.jpeg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'DannyMansmith.jpeg',
+    cloud_url: '/images/DannyMansmith.jpeg',
+    upload_timestamp: 4,
+    like_count: 1,
+    liked_by: null
   },
   {
     title: 'Fiber Arts',
     artist_name: 'Elaine Corets Fiber Artist',
-    file_name: '05-ElaineCorets.jpeg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'ElaineCorets.jpeg',
+    cloud_url: '/images/ElaineCorets.jpeg',
+    upload_timestamp: 5,
+    like_count: 3,
+    liked_by: null
   },
   {
     title: 'Apothecary',
     artist_name: 'Elizabeth Bathery',
-    file_name: '06-ViWPrice.jpg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'ViWPrice.jpg',
+    cloud_url: '/images/ViWPrice.jpg',
+    upload_timestamp: 6,
+    like_count: 2,
+    liked_by: null
   },
   {
     title: 'Ceramics',
     artist_name: 'Heather Cornelius Ceramics',
-    file_name: '07-HeatherCornelius.jpg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'HeatherCornelius.jpg',
+    cloud_url: '/images/HeatherCornelius.jpg',
+    upload_timestamp: 7,
+    like_count: 7,
+    liked_by: null
   },
   {
     title: 'Home Decor',
     artist_name: 'Lady Noire ',
-    file_name: '08-LilithMErion.jpg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'LilithMErion.jpg',
+    cloud_url: '/images/LilithMErion.jpg',
+    upload_timestamp: 8,
+    like_count: 10,
+    liked_by: null
   },
   {
     title: 'Home Decor',
     artist_name: 'Moons and Artistry',
-    file_name: '09-RachelSanders.jpeg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'RachelSanders.jpeg',
+    cloud_url: '/images/RachelSanders.jpeg',
+    upload_timestamp: 9,
+    like_count: 6,
+    liked_by: null
   },
   {
     title: 'Home Decor',
     artist_name: 'SkeleLights ',
-    file_name: '10-ShannonBoxrz.jpg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'ShannonBoxrz.jpg',
+    cloud_url: '/images/ShannonBoxrz.jpg',
+    upload_timestamp: 10,
+    like_count: 12,
+    liked_by: null
   },
   {
     title: 'Apothecary',
     artist_name: 'Stone Circles LLC',
-    file_name: '11-BreeRose.jpg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'BreeRose.jpg',
+    cloud_url: '/images/BreeRose.jpg',
+    upload_timestamp: 11,
+    like_count: 2,
+    liked_by: null
   },
   {
     title: 'Jewelry',
     artist_name: 'Tooth and Snail Studio',
-    file_name: '12-SamiKempf.jpg',
-    cloud_url: 'fake_art_123.com',
+    file_name: 'SamiKempf.jpg',
+    cloud_url: '/images/SamiKempf.jpg',
+    upload_timestamp: 12,
+    like_count: 4,
+    liked_by: null
   },
 
 

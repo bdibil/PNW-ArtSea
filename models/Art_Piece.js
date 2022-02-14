@@ -37,6 +37,11 @@ Art_Piece.init(
           type: DataTypes.INTEGER,
           allowNull: false,
       },
+          liked_by: {
+          type: DataTypes.STRING,
+          allowNull: true,
+          primaryKey: false,
+      },
       collection_id: {
           type: DataTypes.INTEGER,
           allowNull: true,

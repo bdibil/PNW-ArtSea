@@ -30,12 +30,6 @@ const signupFormHandler = async function(event) {
     } else {
       alert(res.message);
     }
-    // if (response.ok) {
-    //   document.location.replace('/login');
-    //   alert('Sign Up Successful');
-    // } else {
-    //   alert('Failed to sign up');
-    // }
   };
   
   document

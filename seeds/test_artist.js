@@ -1,4 +1,4 @@
-const { Artist } = require('../models');
+const {  User } = require('../models');
 
 const test_data = [
   {
@@ -7,6 +7,9 @@ const test_data = [
     username: 'ZoeM',
     email: 'antoinette.illustrations@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'1',
+    is_valid: true
   },
   {
     first_name: 'Kelly',
@@ -14,6 +17,9 @@ const test_data = [
     username: 'KellyV',
     email: 'dreamrunnerwolf@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'2',
+    is_valid: true
   },
   {
     first_name: 'Desiree',
@@ -21,6 +27,9 @@ const test_data = [
     username: 'DesireH',
     email: 'cofccrafts@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'3',
+    is_valid: true
   },
   {
     first_name: 'Danny',
@@ -28,6 +37,9 @@ const test_data = [
     username: 'DannyM',
     email: 'dannymansmith@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'4',
+    is_valid: true
   },
   {
     first_name: 'Elaine',
@@ -35,6 +47,9 @@ const test_data = [
     username: 'ElaineC',
     email: 'ecorets@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'5',
+    is_valid: true
   },
   {
     first_name: 'Violetta',
@@ -42,6 +57,9 @@ const test_data = [
     username: 'ViolettaWolkoffPrice',
     email: 'theelizabethbathery@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'6',
+    is_valid: true
   },
   {
     first_name: 'Heather',
@@ -49,6 +67,9 @@ const test_data = [
     username: 'HeatherCornelius',
     email: 'heatherkcornelius@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'7',
+    is_valid: true
   },
   {
     first_name: 'Lilith',
@@ -56,6 +77,9 @@ const test_data = [
     username: 'LilithE',
     email: 'dancingwolfpictures@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'8',
+    is_valid: true
   },
   {
     first_name: 'Rachel',
@@ -63,6 +87,9 @@ const test_data = [
     username: 'RachelL',
     email: 'missrachelelizabeth@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'9',
+    is_valid: true
   },
   {
     first_name: 'Shannon',
@@ -70,6 +97,9 @@ const test_data = [
     username: 'ShannonForseth',
     email: 'Shannonboxrz@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'10',
+    is_valid: true
   },
   {
     first_name: 'Bree',
@@ -77,6 +107,9 @@ const test_data = [
     username: 'BreeRose',
     email: 'Breesadirarose@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'11',
+    is_valid: true
   },
   {
     first_name: 'Sami',
@@ -84,10 +117,53 @@ const test_data = [
     username: 'SamiKempf',
     email: 'toothandsnails@gmail.com',
     password: 'artsea123',
+    is_artist: 'Artist',
+    unique_string:'12',
+    is_valid: true
   },
+  {
+    first_name: 'Art',
+    last_name: 'Lover',
+    username: 'AL1',
+    email: 'art@love.com',
+    password: 'pass321',
+    is_artist: 'User',
+    unique_string:'13',
+    is_valid: true
+},
+{
+  first_name: 'Joe',
+  last_name: 'Joe',
+  username: 'joejoe',
+  email: 'joe@joe.com',
+  password: 'pass123',
+  is_artist: 'User',
+  unique_string:'14',
+  is_valid: true
+},
+  {
+    first_name: 'p',
+    last_name: 's',
+    username: 'ps',
+    email: 'ps@g.com',
+    password: '$2b$10$JHZBakpjr.jfNpmTHYQbYOKbJjT0fSRx/B/qjZpAjtcv..HMh2Va2',
+    is_artist: 'User',
+    unique_string:'84386487',
+    is_valid: true
+  },
+  {
+    first_name: 'o',
+    last_name: 'd',
+    username: 'od',
+    email: 'od@g.com',
+    password: '$2b$10$7SiygQffKvvUrCHvIJKOZ.59q36BOXaqXIDyrn.ugwZ0buVbeMRiu',
+    is_artist: 'Artist',
+    unique_string:'32534192',
+    is_valid: true
+  }
 
 ];
 
-const seedArtist = () => Artist.bulkCreate(test_data);
+const seedUser = () => User.bulkCreate(test_data);
 
-module.exports = seedArtist;
+module.exports = seedUser;

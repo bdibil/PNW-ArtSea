@@ -4,38 +4,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.jpeg" />
+  <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/artsea/image/upload/v1644794185/artseatrans_uytxik.png" />
   <title>ArtSea</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
-  {{!-- <link rel="stylesheet" type="text/css" href="/css/carousel.css"> --}}
+  <link rel="stylesheet" type="text/css" href="/css/divTable.css">
 </head>
 
 <body>
+  <div id="statusBar"></div>
   <header>
-    <h1>Welcome ArtSea</h1>
-    {{!-- <img src="/images/logo.png" alt="ArtSea Logo" height="50px"> --}}
+    {{!-- <h1>Welcome ArtSea</h1> --}}
+    <img src="https://res.cloudinary.com/artsea/image/upload/v1644794185/artseaBlkWht_spahbf.png" alt="ArtSea Logo" width="300vw">
   </header>
   <nav id="navBar">
-{{!--     <a href="/">ArtSea</a> --}}
-{{!--     <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li> --}}
-{{!--     <a href="/login">Login</a> --}}
-{{!--     <a href="/">Registry</a> --}}
-{{!--     <a href="/">About Us</a> --}}
-{{!--     <a href="#" id="logout-link">Logout</a> --}}
-
   </nav>
   <main>
-    {{!-- just removed this HL --}}
-    {{!-- <aside>
-      <h2>Enjoy the galleries!</h2>
-    </aside> --}}
-   
       {{{body}}}
-    </div>
   </main>
   <footer class="flex-row justify-center">
     &copy; ArtSea Folks
@@ -44,10 +32,12 @@
 </body>
 
 </html>
-{{!-- <script src="/js/logout.js"></script> --}}
 <script src="/js/navbar.js"></script>
-<script src="/js/divTable.js"></script>
 <script src="/js/add-to-registry.js"></script>
+<script src="/js/apply-filter.js"></script>
+<script src="https://upload-widget.cloudinary.com/global/all.js"></script>
+<script src="/js/copy-to-clipboard.js"></script>
+<script src="/js/like-art.js"></script>
 {{!-- <script src="/js/carousel.js"></script> --}}
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
