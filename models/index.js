@@ -15,8 +15,11 @@ Artist.belongsToMany(User, { through: Liked_Artist})
 
 // Links Users  and  Liked  Art_Pieces  through: Registry
 User.hasMany(Art_Piece)
-Art_Piece.belongsToMany(User, { through: Registry})
+Art_Piece.belongsTo(User, {foreignKey: "user_id"})
 
+User.hasOne(Registry)
+Registry.belongsTo(User,{foreignKey: "user_id"})
+// Art_Piece.belongsToMany(User, { through: Registry})
 
 Artist.hasMany(Art_Piece)
 Artist.hasMany(Collection)
