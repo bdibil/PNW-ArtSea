@@ -10,7 +10,7 @@ const test_data = [
     cloud_url: '/images/ZoeMcTamaney.jpg',
     upload_timestamp: 1,
     like_count: 5,
-
+    liked_by: null
   },
   {
     title: 'Illustration',
@@ -19,6 +19,7 @@ const test_data = [
     cloud_url: '/images/KellyDeanVerity.jpg',
     upload_timestamp: 2,
     like_count: 4,
+    liked_by: null
   },
   {
     title: 'Apothecary',
@@ -27,6 +28,7 @@ const test_data = [
     cloud_url: '/images/CoOpCreations.jpeg',
     upload_timestamp: 3,
     like_count: 8,
+    liked_by: null
   },
   {
     title: 'Fiber Arts',
@@ -35,6 +37,7 @@ const test_data = [
     cloud_url: '/images/DannyMansmith.jpeg',
     upload_timestamp: 4,
     like_count: 1,
+    liked_by: null
   },
   {
     title: 'Fiber Arts',
@@ -43,6 +46,7 @@ const test_data = [
     cloud_url: '/images/ElaineCorets.jpeg',
     upload_timestamp: 5,
     like_count: 3,
+    liked_by: null
   },
   {
     title: 'Apothecary',
@@ -51,6 +55,7 @@ const test_data = [
     cloud_url: '/images/ViWPrice.jpg',
     upload_timestamp: 6,
     like_count: 2,
+    liked_by: null
   },
   {
     title: 'Ceramics',
@@ -59,6 +64,7 @@ const test_data = [
     cloud_url: '/images/HeatherCornelius.jpg',
     upload_timestamp: 7,
     like_count: 7,
+    liked_by: null
   },
   {
     title: 'Home Decor',
@@ -67,6 +73,7 @@ const test_data = [
     cloud_url: '/images/LilithMErion.jpg',
     upload_timestamp: 8,
     like_count: 10,
+    liked_by: null
   },
   {
     title: 'Home Decor',
@@ -75,6 +82,7 @@ const test_data = [
     cloud_url: '/images/RachelSanders.jpeg',
     upload_timestamp: 9,
     like_count: 6,
+    liked_by: null
   },
   {
     title: 'Home Decor',
@@ -83,6 +91,7 @@ const test_data = [
     cloud_url: '/images/ShannonBoxrz.jpg',
     upload_timestamp: 10,
     like_count: 12,
+    liked_by: null
   },
   {
     title: 'Apothecary',
@@ -91,6 +100,7 @@ const test_data = [
     cloud_url: '/images/BreeRose.jpg',
     upload_timestamp: 11,
     like_count: 2,
+    liked_by: null
   },
   {
     title: 'Jewelry',
@@ -99,6 +109,7 @@ const test_data = [
     cloud_url: '/images/SamiKempf.jpg',
     upload_timestamp: 12,
     like_count: 4,
+    liked_by: null
   },
 
 
