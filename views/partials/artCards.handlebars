@@ -1,14 +1,12 @@
 <div class="card-columns" style="width: max-content; margin-left: 20%; margin-right: 20%;">
     {{#each artPieces}}
     <div class="card p-3 text-right">
-        <img src={{this.cloud_url}}>
+        <img src={{this.cloud_url}} class="art-img" id="image-{{this.id}}">
         <blockquote class="blockquote mb-0">
             <p></p>
             <footer class="blockquote-footer">
-                <small class="text-muted">{{this.title}} <cite title="Source Title"> by {{this.artist_name}}</cite>
+                <small class="text-muted" id="image-title-{{this.id}}">{{this.title}} <cite title="Source Title"> by {{this.artist_name}}</cite>
                 </small><br>
-                <button type="button" value="{{this.id}}" class="addToRegistry btn btn-primary btn-sm" onclick="addToRegistry(this)">Add to Registry</button>
-            </footer>
                 <svg onclick="likeArt({{this.id}})" id="like-{{this.id}}" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                     {{#if this.liked }}class="bi bi-heart-fill text-danger" {{else}} class="bi bi-heart-fill" {{/if}}  viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
@@ -17,6 +15,7 @@
                 {{#if state}}
                     <button type="button" value="{{this.id}}" class="addToRegistry btn btn-primary btn-sm" {{this.state}} onclick="addToRegistry(this)">Add to Registry</button>
                 {{/if}}
+                </footer>
         </blockquote>
     </div>
     {{/each}}
