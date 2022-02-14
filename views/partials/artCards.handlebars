@@ -9,6 +9,10 @@
                 </small><br>
                 <button type="button" value="{{this.id}}" class="addToRegistry btn btn-primary btn-sm" onclick="addToRegistry(this)">Add to Registry</button>
             </footer>
+                <svg onclick="likeArt({{this.id}})" id="like-{{this.id}}" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    {{#if this.liked }}class="bi bi-heart-fill text-danger" {{else}} class="bi bi-heart-fill" {{/if}}  viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                </svg>
                 <small class="text-muted" id="num-likes-{{this.id}}">{{this.like_count}} likes</small>
                 {{#if state}}
                     <button type="button" value="{{this.id}}" class="addToRegistry btn btn-primary btn-sm" {{this.state}} onclick="addToRegistry(this)">Add to Registry</button>

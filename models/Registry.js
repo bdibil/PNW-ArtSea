@@ -13,6 +13,11 @@ Registry.init(
         primaryKey: true,
         autoIncrement: true,
       },
+      items: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        primaryKey: false,
+      },
     },
     {
       sequelize,
@@ -20,6 +25,10 @@ Registry.init(
       freezeTableName: true,
       underscored: true,
       modelName: 'registry',
+      indexes:[{
+            unique: true,
+            fields: ['user_id']
+      }]
     }
   );
 
