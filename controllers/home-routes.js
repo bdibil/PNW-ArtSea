@@ -4,15 +4,21 @@ const artroute = require('../controllers/api/art-routes')
 const {request} = require("express");
 const {getArtistNames} = require("./utils/getAllArtistNames");
 const {getArtTypes} = require("./utils/getArtTypes");
-const {getArtPieces} = require("./utils/getArtPieces");
+const {getRegistry} = require("./utils/get-registry")
+const {getAllArtPieces, getArtistArtPieces, getArtPieces} = require("./utils/getArtPieces");
 
-// GET all galleries for homepage
 router.get('/', async (req, res) => {
+  const category = req.query.category;
+  const artist = req.query.artist;
+  console.log("router("+category+"+, "+artist+")");
   let latest = await artroute.getLatest();
   const artistNames = await getArtistNames();
   const artTypes = await getArtTypes();
-  const artPieces = await getArtPieces();
+  const artPieces = await getAllArtPieces(req.session.loggedIn, req.session.user_id, category, artist);
+
   let mostLiked = await artroute.getMostLiked();
+
+  console.log("getAllArtPieces = "+JSON.stringify(artPieces))
 
   res.render('homepage', {
     latest : latest,
@@ -23,72 +29,14 @@ router.get('/', async (req, res) => {
   });
 });
 
-// router.get('/', async (req, res) => {
-//   try {
-//     const dbGalleryData = await Gallery.findAll({
-//       include: [
-//         {
-//           model: Painting,
-//           attributes: ['filename', 'description'],
-//         },
-//       ],
-//     });
-//
-//     const galleries = dbGalleryData.map((gallery) =>
-//       gallery.get({ plain: true })
-//     );
-//
-//     console.log(galleries);
-//
-//     res.render('homepage', {
-//       galleries,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
+router.get('/', async (req, res) => {
+  const userId = req.query.userid;
+  const registryArt = await getRegistry(userId);
 
-// // GET one gallery
-// router.get('/gallery/:id', async (req, res) => {
-//   try {
-//     const dbGalleryData = await Gallery.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: Painting,
-//           attributes: [
-//             'id',
-//             'title',
-//             'artist',
-//             'exhibition_date',
-//             'filename',
-//             'description',
-//           ],
-//         },
-//       ],
-//     });
-
-//     const gallery = dbGalleryData.get({ plain: true });
-//     res.render('gallery', { gallery });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-// GET one painting
-// router.get('/painting/:id', async (req, res) => {
-//   try {
-//     const dbPaintingData = await Painting.findByPk(req.params.id);
-
-//     const painting = dbPaintingData.get({ plain: true });
-
-//     res.render('painting', { painting });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
+  res.render('shared-registry', {
+    registryArt: registryArt
+  });
+});
 
 router.get('/login', async (req, res) => {
   if (req.session.loggedIn) {
@@ -109,8 +57,41 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/upload-art', (req, res) => {
-
   res.render('upload-art');
+});
+
+router.get('/my-registry', async (req, res) => {
+  const userId = req.session.user_id;
+  const registryArt = await getRegistry(userId);
+  const shareUrl = "http://localhost:3001/sharedRegistry/?userid="+userId;
+  console.log("shareUrl "+shareUrl);
+
+  res.render('registry', {
+    registryArt: registryArt,
+    userId: userId,
+    shareUrl: shareUrl
+  });
+});
+
+router.get('/sharedRegistry', async (req, res) => {
+  const userId = req.query.userid;
+  const registryArt = await getRegistry(userId);
+
+  res.render('shared-registry', {
+    registryArt: registryArt
+  });
+});
+
+router.get('/my-art', async (req, res) => {
+  const myArtPieces = await getArtistArtPieces(req.session.user_id);
+
+  res.render('my-art', {
+    artPieces: myArtPieces,
+  });
+});
+
+router.get('/about-us', async (req, res) => {
+  res.render('aboutUs');
 });
 
 module.exports = router;
