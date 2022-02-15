@@ -19,13 +19,14 @@ const getNavBarElements = async () => {
     });
 
     let res = await response.json();
-    let returnHtml = `<a href="/">ArtSea</a><a href="/about-us">About Us</a><a href="/my-registry" id="my-registry">My Registry</a>`;
+    let returnHtml = `<a href="/">ArtSea</a><a href="/about-us">About Us</a>`;
 
     if (response.ok) {
-        // alert("response = "+JSON.stringify(res));
         if(res.user == "User") {
+            returnHtml += `<a href="/my-registry" id="my-registry">My Registry</a>`
             returnHtml += `<a href="#" id="logout-link">Logout</a>`
         } else if(res.user == "Artist") {
+            returnHtml += `<a href="/my-registry" id="my-registry">My Registry</a>`
             returnHtml += `<a href="/my-art">My Art</a>`
             returnHtml += `<a href="/upload-art">Upload Art</a>`
             returnHtml += `<a href="#" id="logout-link">Logout</a>`

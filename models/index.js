@@ -7,24 +7,12 @@ const Art_Piece = require('./Art_Piece');
 const Collection = require('./Collection');
 const Art_Type = require('./Art_Type');
 
-
-// Links Users  and  Artists  through: Liked_Artist
-User.hasMany(Liked_Artist);
-Artist.belongsToMany(User, { through: Liked_Artist})
-
-
 // Links Users  and  Liked  Art_Pieces  through: Registry
-User.hasMany(Art_Piece)
 Art_Piece.belongsTo(User, {foreignKey: "user_id"})
 
 User.hasOne(Registry)
 Registry.belongsTo(User,{foreignKey: "user_id"})
 // Art_Piece.belongsToMany(User, { through: Registry})
-
-Artist.hasMany(Art_Piece)
-Artist.hasMany(Collection)
-
-Collection.hasMany(Art_Piece)
 
 Art_Type.hasMany(Art_Piece)
 

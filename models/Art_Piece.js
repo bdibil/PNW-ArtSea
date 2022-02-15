@@ -48,7 +48,7 @@ Art_Piece.init(
       },
       art_type_id: {
           type: DataTypes.INTEGER,
-          allowNull: true ,
+          allowNull: false ,
       }
     },
     {

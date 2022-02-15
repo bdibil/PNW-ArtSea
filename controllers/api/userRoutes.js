@@ -16,7 +16,7 @@ const randString = () => {
   return randStr
 }
 
-const uniqueString = randString();
+let uniqueString = randString();
 
 router.post('/', async (req, res) => {
   console.log(req.body);

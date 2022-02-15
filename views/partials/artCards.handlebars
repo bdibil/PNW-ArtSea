@@ -1,7 +1,7 @@
 <div class="card-columns" style="width: max-content; margin-left: 20%; margin-right: 20%;">
     {{#each artPieces}}
     <div class="card p-3 text-right">
-        <img src={{this.cloud_url}} class="art-img" id="image-{{this.id}}">
+        <img src={{this.cloud_url}} class="art-img" id="image-{{this.id}}" onclick="loadInModal({{this.id}}, '{{this.title}}')">
         <blockquote class="blockquote mb-0">
             <p></p>
             <footer class="blockquote-footer">
