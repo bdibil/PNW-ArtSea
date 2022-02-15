@@ -16,7 +16,7 @@ const randString = () => {
   return randStr
 }
 
-const uniqueString = randString();
+let uniqueString = randString();
 
 router.post('/', async (req, res) => {
   console.log(req.body);
@@ -62,7 +62,7 @@ router.post('/', async (req, res) => {
       text: "Hello world?", // plain text body
       html: `Dear <b>${req.body.username}</b>,
       Welcome to <b>ArtSea</b><br>\
-      Please verify yourself by clicking on this <a href=http://localhost:3001/api/users/verify/${uniqueString}>link</a>`, // html body
+      Please verify yourself by clicking on this <a href=http://artsea-2022.herokuapp.com/api/users/verify/${uniqueString}>link</a>`, // html body
     }
   
     // send mail with defined transport object

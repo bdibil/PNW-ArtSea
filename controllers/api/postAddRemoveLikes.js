@@ -1,5 +1,5 @@
 const {QueryTypes} = require("sequelize");
-const {Registry, Art_Piece} = require("../../models");
+const {Art_Piece} = require("../../models");
 const router = require('express').Router();
 const delim = ","
 
@@ -8,52 +8,53 @@ router.post("/addRemoveLikes", async (req, res) => {
     const artid = req.body.artid;
     const action = req.body.action;
 
-    const sql = await sequelize.query("SELECT * FROM `art_piece` where id="+artid, { type: QueryTypes.SELECT });
+    if(userid === undefined) {
+        res
+            .status(200)
+            .json({
+            msg: "Cannot Like while logged out"
+        });
+        return;
+    }
 
-    let newLiked = ""
+    const artPiece = await Art_Piece.findOne({where: {id: artid} })
+
+    let newLikeBy = ""
+    const currentLikeBy = artPiece.liked_by
+    let currentLikeCount = parseInt(artPiece.like_count)
     if(action === "add") {
-        const current = sql[0].liked_by
-        let numLikes = parseInt(sql[0].like_count)
-        if(current) {
-            current.split(delim).push(userid);
-            newLiked = current.size > 1 ? current.join(delim) : current;
+        if(currentLikeCount > 0) {
+            let tempLikeBy = currentLikeBy.split(delim);
+            tempLikeBy.push(userid);
+            newLikeBy = tempLikeBy.size > 1 ? tempLikeBy.join(delim) : tempLikeBy;
         } else {
-            newLiked = userid.toString();
+            newLikeBy = userid.toString();
         }
-        numLikes += 1;
-        await insertOrUpdate(newLiked, numLikes, artid)
+        artPiece.liked_by = newLikeBy.toString();
+        artPiece.like_count = currentLikeCount+1;
+        await artPiece.save();
         res.json({
             msg: "Art Liked",
-            count: numLikes
+            count: currentLikeCount+1
         });
     } else {
-        const current = sql[0].liked_by
-        let numLikes = parseInt(sql[0].like_count)
-
-        if(current) {
-            const currentSet = new Set(current);
+        if(currentLikeCount > 0) {
+            const currentSet = new Set(currentLikeBy.split(delim));
             currentSet.delete(userid.toString());
             if(currentSet.size > 0) {
-                newLiked = Array.from(currentSet).join(delim);
+                newLikeBy = Array.from(currentSet).join(delim);
             } else {
-                newLiked = null
+                newLikeBy = null
             }
-            console.log("newLiked "+newLiked)
-            numLikes -= 1;
-            await insertOrUpdate(newLiked, numLikes, artid);
+            artPiece.liked_by = newLikeBy;
+            artPiece.like_count = currentLikeCount-1;
+            await artPiece.save();
         }
         res.json({
             msg: "Like Removed",
-            count: numLikes
+            count: currentLikeCount-1
         });
     }
 });
-
-async function insertOrUpdate(likedBy, numLikes, artId) {
-    return await Art_Piece.update(
-        {liked_by: likedBy, like_count: numLikes},{where:{id: artId}}
-    );
-
-}
 
 module.exports = router;

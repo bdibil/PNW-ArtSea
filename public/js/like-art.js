@@ -1,9 +1,8 @@
 async function likeArt(imgId) {
     const toggleColorClass = "text-danger";
-    document.getElementById("like-"+imgId).classList.toggle(toggleColorClass);
 
     const postBody = JSON.stringify({
-        action: document.getElementById("like-"+imgId).classList.contains(toggleColorClass) ? "add" : "remove",
+        action: document.getElementById("like-"+imgId).classList.contains(toggleColorClass) ? "remove" : "add",
         artid: imgId
     });
 
@@ -13,6 +12,11 @@ async function likeArt(imgId) {
         headers: {'Content-Type': 'application/json'}
     })).json();
 
-    document.getElementById("num-likes-"+imgId).innerHTML = postResponse.count + " likes";
-
+    if(postResponse.msg === "Cannot Like while logged out") {
+        alert(postResponse.msg);
+    }
+    else {
+        document.getElementById("like-"+imgId).classList.toggle(toggleColorClass);
+        document.getElementById("num-likes-"+imgId).innerHTML = postResponse.count + " likes";
+    }
 }
