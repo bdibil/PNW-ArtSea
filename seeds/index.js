@@ -19,8 +19,6 @@ const seedAll = async () => {
 
   await seedRegistry();
 
-
-
   process.exit(0);
 };
 

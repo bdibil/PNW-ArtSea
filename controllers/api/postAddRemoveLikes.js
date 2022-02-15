@@ -8,6 +8,14 @@ router.post("/addRemoveLikes", async (req, res) => {
     const artid = req.body.artid;
     const action = req.body.action;
 
+    if(userid === undefined) {
+        res
+            .status(200)
+            .json({
+            msg: "Cannot Like while logged out"
+        });
+    }
+
     const artPiece = await Art_Piece.findOne({where: {id: artid} })
 
     let newLikeBy = ""
