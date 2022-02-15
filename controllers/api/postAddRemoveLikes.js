@@ -14,6 +14,7 @@ router.post("/addRemoveLikes", async (req, res) => {
             .json({
             msg: "Cannot Like while logged out"
         });
+        return;
     }
 
     const artPiece = await Art_Piece.findOne({where: {id: artid} })
