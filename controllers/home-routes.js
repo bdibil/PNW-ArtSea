@@ -63,7 +63,7 @@ router.get('/upload-art', (req, res) => {
 router.get('/my-registry', async (req, res) => {
   const userId = req.session.user_id;
   const registryArt = await getRegistry(userId);
-  const shareUrl = "http://localhost:3001/sharedRegistry/?userid="+userId;
+  const shareUrl = "https://artsea-2022.herokuapp.com/sharedRegistry/?userid="+userId;
   console.log("shareUrl "+shareUrl);
 
   res.render('registry', {

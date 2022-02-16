@@ -2,6 +2,7 @@
 .divTable{
     display: table;
     width: 100%;
+    margin: 0 auto;
 }
 .divTableRow {
     display: table-row;
@@ -11,9 +12,11 @@
     display: table-header-group;
 }
 .divTableCell, .divTableHead {
-    /*border: 1px solid #999999;*/
-    display: table-cell;
+    /* border: 1px solid #999999; */
+    display: block;
     padding: 3px 10px;
+    width: 50%;
+    float: left;
 }
 .divTableHeading {
     background-color: #EEE;
