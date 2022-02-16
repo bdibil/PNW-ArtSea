@@ -16,9 +16,8 @@ const randString = () => {
   return randStr
 }
 
-let uniqueString = randString();
-
 router.post('/', async (req, res) => {
+  let uniqueString = randString();
   console.log(req.body);
   try {
     const newUser = await User.create({
