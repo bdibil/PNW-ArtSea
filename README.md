@@ -45,7 +45,7 @@ You can register as an Artist and upload your work to our site, or as a User and
 
 Check out a screenshot of our site: 
 
-![](https://res.cloudinary.com/artsea/image/upload/v1644876776/ArtSea_Full_b5a9as.png)
+![](https://res.cloudinary.com/dq5xoyv5u/image/upload/v1644994112/fullscreenView_-min_mku5ed.png)
 
 
 ## Technologies 
