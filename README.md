@@ -39,7 +39,7 @@ Enter PW when promted
 The application is deployed on the link below:
 
 
-[ArtSea - Art Scene of the Puget Sound](http://artsea-2022.herokuapp.com/)
+[ArtSea - Art Scene of the Puget Sound](https://artsea-2022.herokuapp.com/)
 
 You can register as an Artist and upload your work to our site, or as a User and browse all the art, like your favorite art pieces and add them to your registry. 
 
